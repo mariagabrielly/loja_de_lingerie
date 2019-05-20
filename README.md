@@ -25,6 +25,7 @@ bodao = ProdutoTipo("Bodão", valor=140, quantidade=20)
 db.session.add(bodinho)
 db.session.add(bodao)
 db.session.commit
+# CTRL+D para sair
 ```
 
 E executar a aplicação
