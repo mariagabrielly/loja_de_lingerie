@@ -19,8 +19,8 @@ flask shell
 from app import db
 db.create_all()
 
-bodinho = ProdutoTipo("Bodinho", valor=70, quantidade=10)
-bodao = ProdutoTipo("Bodão", valor=140, quantidade=20)
+bodinho = ProdutoTipo(nome="Bodinho", valor=70, quantidade=10)
+bodao = ProdutoTipo(nome="Bodão", valor=140, quantidade=20)
 
 db.session.add(bodinho)
 db.session.add(bodao)
