@@ -10,6 +10,26 @@ cd disk-bode
 python3 -m venv venv
 source venv/bin/activate
 pip install flask flask-bootstrap flask-moment flask-wtf flask-sqlalchemy flask-migrate
+```
+
+Agora vamos adicionar valores ao banco de dados:
+
+```python
+flask shell
+from app import db
+db.create_all()
+
+bodinho = ProdutoTipo("Bodinho", valor=70, quantidade=10)
+bodao = ProdutoTipo("Bodão", valor=140, quantidade=20)
+
+db.session.add(bodinho)
+db.session.add(bodao)
+db.session.commit
+```
+
+E executar a aplicação
+
+```
 export FLASK_APP=app.py
 flask run -p 8080
 ```
