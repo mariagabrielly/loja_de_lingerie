@@ -36,9 +36,9 @@ class ProdutoTipo(db.Model):
     nome = db.Column(db.String(128), unique=True, index=True)
     valor = db.Column(db.Float)
     quantidade = db.Column(db.Integer, default=0)
+    modelo = db.Column (db.String(128),unique=True, index=True)
     def __repr__(self):
         return '<ProdutoTipo %r quantidade=%s' % (self.nome, self.quantidade)
-
 
 
 @app.errorhandler(404)
@@ -79,3 +79,5 @@ def index():
 @app.shell_context_processor
 def make_shell_context():
     return dict(db=db, ProdutoTipo=ProdutoTipo)
+
+
